@@ -9,13 +9,13 @@ public class AppleScript : MonoBehaviour
     }
 
     //public SpriteRenderer SR;
-    public float AppleTimer = 10;
+    public float RotTimer = 10;
 
     // Update is called once per frame
     void Update()
     {
-        AppleTimer -= Time.deltaTime;
-        if (AppleTimer <= 0)
+        RotTimer -= Time.deltaTime;
+        if (RotTimer <= 0)
         {
             //change color later;
             Destroy(gameObject);
