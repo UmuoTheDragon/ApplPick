@@ -17,7 +17,8 @@ public class AppleScript : MonoBehaviour
         AppleTimer -= Time.deltaTime;
         if (AppleTimer <= 0)
         {
-            //SpriteRenderer.color = Color.yellow;
+            //change color later;
+            Destroy(gameObject);
         }
     }
 
