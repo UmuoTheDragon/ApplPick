@@ -6,10 +6,13 @@ public class KajabunScript : MonoBehaviour
     public Camera camera;
     public Rigidbody RB;
     public AppleScript ApplePrefab;
+    public Transform PlayerOrientation;
     public float MSensitivity = 1;
     public float Speed = 5;
     public float AppleTimer = 10;
     public int Score = 0;
+
+
     void Start()
     {
         Cursor.lockState = CursorLockMode.Locked;
@@ -32,6 +35,11 @@ public class KajabunScript : MonoBehaviour
 
         transform.Rotate(0, mouse.x * MSensitivity, 0);
         camera.transform.Rotate(mouse.y * MSensitivity * -1, 0, 0);
+
+        float HorizontalInput = Input.GetAxis("Horizontal");
+        float VerticalInput = Input.GetAxis("Vertical");
+
+        Vector3 movement = PlayerOrientation.forward * VerticalInput + PlayerOrientation.right * HorizontalInput;
 
         //Walking
         Vector3 vel = new Vector3(0, RB.linearVelocity.y, 0);
