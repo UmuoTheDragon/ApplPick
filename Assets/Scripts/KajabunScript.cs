@@ -39,8 +39,8 @@ public class KajabunScript : MonoBehaviour
         float HorizontalInput = Input.GetAxis("Horizontal");
         float VerticalInput = Input.GetAxis("Vertical");
 
-        Vector3 movement = PlayerOrientation.forward * VerticalInput + PlayerOrientation.right * HorizontalInput;
-
+        //Vector3 movement = PlayerOrientation.forward * VerticalInput + PlayerOrientation.right * HorizontalInput;
+        Vector3 movement = Vector3.zero;
         //Walking
         Vector3 vel = new Vector3(0, RB.linearVelocity.y, 0);
         if (Keyboard.current.wKey.isPressed)
@@ -51,6 +51,7 @@ public class KajabunScript : MonoBehaviour
             vel += transform.right * -Speed;
         if (Keyboard.current.dKey.isPressed)
             vel += transform.right * Speed;
+        vel = vel.normalized * Speed;
         RB.linearVelocity = vel;
     }
 
