@@ -9,7 +9,7 @@ public class AppleScript : MonoBehaviour
     }
 
     //public SpriteRenderer SR;
-    public float RotTimer = 10;
+    public float RotTimer = 20;
 
     // Update is called once per frame
     void Update()

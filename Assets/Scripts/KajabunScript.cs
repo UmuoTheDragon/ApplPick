@@ -27,7 +27,7 @@ public class KajabunScript : MonoBehaviour
         if (AppleTimer <= 0)
         {
             AppleTimer = 5;
-            Instantiate(ApplePrefab, new Vector3(Random.Range(-8f, 8f), Random.Range(0, 1)), Quaternion.identity);
+            Instantiate(ApplePrefab, new Vector3(Random.Range(-10f, 10f), Random.Range(5f, 10f)), Quaternion.identity);
         }
 
         //Mouse Movement
@@ -39,8 +39,8 @@ public class KajabunScript : MonoBehaviour
         float HorizontalInput = Input.GetAxis("Horizontal");
         float VerticalInput = Input.GetAxis("Vertical");
 
-        //Vector3 movement = PlayerOrientation.forward * VerticalInput + PlayerOrientation.right * HorizontalInput;
-        Vector3 movement = Vector3.zero;
+        Vector3 movement = PlayerOrientation.forward * VerticalInput + PlayerOrientation.right * HorizontalInput;
+        //Vector3 movement = Vector3.zero;
         //Walking
         Vector3 vel = new Vector3(0, RB.linearVelocity.y, 0);
         if (Keyboard.current.wKey.isPressed)
@@ -67,7 +67,8 @@ public class KajabunScript : MonoBehaviour
         {
             Apple.GetBumped();
             Score++;
-
+            //add score later
+            Debug.Log("Score" + Score);
         }
     }
 }

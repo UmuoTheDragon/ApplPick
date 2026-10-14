@@ -4,7 +4,7 @@ public class enemyfollow : MonoBehaviour
 {
     public Rigidbody RB;
     //My stats
-    public float Speed = 1;
+    public float Speed = 2.5f;
 
     //Who do I walk towards?
     public GameObject Target;
@@ -16,6 +16,8 @@ public class enemyfollow : MonoBehaviour
 
     private void Update()
     {
+        //Copied from teacher
+
         //Rotate to look at the player
         transform.LookAt(Target.transform);
         //Make a temp velocity variable to calculate how I should move
